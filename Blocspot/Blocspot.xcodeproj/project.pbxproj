@@ -1,0 +1,551 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A7392C511CC6E07A0015546C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7392C501CC6E07A0015546C /* AppDelegate.swift */; };
+		A7392C531CC6E07A0015546C /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7392C521CC6E07A0015546C /* RootViewController.swift */; };
+		A7392C551CC6E07A0015546C /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7392C541CC6E07A0015546C /* DataViewController.swift */; };
+		A7392C571CC6E07A0015546C /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7392C561CC6E07A0015546C /* ModelController.swift */; };
+		A7392C5A1CC6E07A0015546C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7392C581CC6E07A0015546C /* Main.storyboard */; };
+		A7392C5C1CC6E07A0015546C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7392C5B1CC6E07A0015546C /* Assets.xcassets */; };
+		A7392C5F1CC6E07A0015546C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7392C5D1CC6E07A0015546C /* LaunchScreen.storyboard */; };
+		A7392C6A1CC6E07A0015546C /* BlocspotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7392C691CC6E07A0015546C /* BlocspotTests.swift */; };
+		A7392C751CC6E07A0015546C /* BlocspotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7392C741CC6E07A0015546C /* BlocspotUITests.swift */; };
+		A7B244BB1CCAAE68000AAD69 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7B244BA1CCAAE68000AAD69 /* MapKit.framework */; };
+		A7B244BD1CCE71B6000AAD69 /* SpotMap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7B244BC1CCE71B6000AAD69 /* SpotMap.storyboard */; };
+		A7B244BF1CCE894E000AAD69 /* PointOfInterest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B244BE1CCE894E000AAD69 /* PointOfInterest.swift */; };
+		A7B244C11CCE896F000AAD69 /* SearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B244C01CCE896F000AAD69 /* SearchRequest.swift */; };
+		A7B244C31CCE897F000AAD69 /* SearchHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B244C21CCE897F000AAD69 /* SearchHistory.swift */; };
+		A7B244C71CCE8E4A000AAD69 /* SpotMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B244C61CCE8E4A000AAD69 /* SpotMapViewController.swift */; };
+		A7D019FB1CD6A07D00DD3B87 /* BLSDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D019FA1CD6A07D00DD3B87 /* BLSDataSource.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A7392C661CC6E07A0015546C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A7392C451CC6E07A0015546C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A7392C4C1CC6E07A0015546C;
+			remoteInfo = Blocspot;
+		};
+		A7392C711CC6E07A0015546C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A7392C451CC6E07A0015546C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A7392C4C1CC6E07A0015546C;
+			remoteInfo = Blocspot;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A7392C4D1CC6E07A0015546C /* Blocspot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blocspot.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7392C501CC6E07A0015546C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A7392C521CC6E07A0015546C /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		A7392C541CC6E07A0015546C /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
+		A7392C561CC6E07A0015546C /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
+		A7392C591CC6E07A0015546C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A7392C5B1CC6E07A0015546C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A7392C5E1CC6E07A0015546C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A7392C601CC6E07A0015546C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A7392C651CC6E07A0015546C /* BlocspotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlocspotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7392C691CC6E07A0015546C /* BlocspotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlocspotTests.swift; sourceTree = "<group>"; };
+		A7392C6B1CC6E07A0015546C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A7392C701CC6E07A0015546C /* BlocspotUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlocspotUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7392C741CC6E07A0015546C /* BlocspotUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlocspotUITests.swift; sourceTree = "<group>"; };
+		A7392C761CC6E07A0015546C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A7B244BA1CCAAE68000AAD69 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		A7B244BC1CCE71B6000AAD69 /* SpotMap.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SpotMap.storyboard; sourceTree = "<group>"; };
+		A7B244BE1CCE894E000AAD69 /* PointOfInterest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointOfInterest.swift; sourceTree = "<group>"; };
+		A7B244C01CCE896F000AAD69 /* SearchRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchRequest.swift; sourceTree = "<group>"; };
+		A7B244C21CCE897F000AAD69 /* SearchHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchHistory.swift; sourceTree = "<group>"; };
+		A7B244C61CCE8E4A000AAD69 /* SpotMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpotMapViewController.swift; path = ../../SpotMapViewController.swift; sourceTree = "<group>"; };
+		A7D019FA1CD6A07D00DD3B87 /* BLSDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLSDataSource.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A7392C4A1CC6E07A0015546C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7B244BB1CCAAE68000AAD69 /* MapKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A7392C621CC6E07A0015546C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A7392C6D1CC6E07A0015546C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A7392C441CC6E07A0015546C = {
+			isa = PBXGroup;
+			children = (
+				A7B244BA1CCAAE68000AAD69 /* MapKit.framework */,
+				A7392C4F1CC6E07A0015546C /* Blocspot */,
+				A7392C681CC6E07A0015546C /* BlocspotTests */,
+				A7392C731CC6E07A0015546C /* BlocspotUITests */,
+				A7392C4E1CC6E07A0015546C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A7392C4E1CC6E07A0015546C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A7392C4D1CC6E07A0015546C /* Blocspot.app */,
+				A7392C651CC6E07A0015546C /* BlocspotTests.xctest */,
+				A7392C701CC6E07A0015546C /* BlocspotUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A7392C4F1CC6E07A0015546C /* Blocspot */ = {
+			isa = PBXGroup;
+			children = (
+				A7392C501CC6E07A0015546C /* AppDelegate.swift */,
+				A7392C521CC6E07A0015546C /* RootViewController.swift */,
+				A7392C541CC6E07A0015546C /* DataViewController.swift */,
+				A7392C561CC6E07A0015546C /* ModelController.swift */,
+				A7B244C61CCE8E4A000AAD69 /* SpotMapViewController.swift */,
+				A7392C581CC6E07A0015546C /* Main.storyboard */,
+				A7392C5B1CC6E07A0015546C /* Assets.xcassets */,
+				A7392C5D1CC6E07A0015546C /* LaunchScreen.storyboard */,
+				A7B244BC1CCE71B6000AAD69 /* SpotMap.storyboard */,
+				A7392C601CC6E07A0015546C /* Info.plist */,
+				A7B244BE1CCE894E000AAD69 /* PointOfInterest.swift */,
+				A7D019FA1CD6A07D00DD3B87 /* BLSDataSource.swift */,
+				A7B244C01CCE896F000AAD69 /* SearchRequest.swift */,
+				A7B244C21CCE897F000AAD69 /* SearchHistory.swift */,
+			);
+			path = Blocspot;
+			sourceTree = "<group>";
+		};
+		A7392C681CC6E07A0015546C /* BlocspotTests */ = {
+			isa = PBXGroup;
+			children = (
+				A7392C691CC6E07A0015546C /* BlocspotTests.swift */,
+				A7392C6B1CC6E07A0015546C /* Info.plist */,
+			);
+			path = BlocspotTests;
+			sourceTree = "<group>";
+		};
+		A7392C731CC6E07A0015546C /* BlocspotUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A7392C741CC6E07A0015546C /* BlocspotUITests.swift */,
+				A7392C761CC6E07A0015546C /* Info.plist */,
+			);
+			path = BlocspotUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A7392C4C1CC6E07A0015546C /* Blocspot */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A7392C791CC6E07A0015546C /* Build configuration list for PBXNativeTarget "Blocspot" */;
+			buildPhases = (
+				A7392C491CC6E07A0015546C /* Sources */,
+				A7392C4A1CC6E07A0015546C /* Frameworks */,
+				A7392C4B1CC6E07A0015546C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Blocspot;
+			productName = Blocspot;
+			productReference = A7392C4D1CC6E07A0015546C /* Blocspot.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A7392C641CC6E07A0015546C /* BlocspotTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A7392C7C1CC6E07A0015546C /* Build configuration list for PBXNativeTarget "BlocspotTests" */;
+			buildPhases = (
+				A7392C611CC6E07A0015546C /* Sources */,
+				A7392C621CC6E07A0015546C /* Frameworks */,
+				A7392C631CC6E07A0015546C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A7392C671CC6E07A0015546C /* PBXTargetDependency */,
+			);
+			name = BlocspotTests;
+			productName = BlocspotTests;
+			productReference = A7392C651CC6E07A0015546C /* BlocspotTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A7392C6F1CC6E07A0015546C /* BlocspotUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A7392C7F1CC6E07A0015546C /* Build configuration list for PBXNativeTarget "BlocspotUITests" */;
+			buildPhases = (
+				A7392C6C1CC6E07A0015546C /* Sources */,
+				A7392C6D1CC6E07A0015546C /* Frameworks */,
+				A7392C6E1CC6E07A0015546C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A7392C721CC6E07A0015546C /* PBXTargetDependency */,
+			);
+			name = BlocspotUITests;
+			productName = BlocspotUITests;
+			productReference = A7392C701CC6E07A0015546C /* BlocspotUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A7392C451CC6E07A0015546C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = ozzieozumo;
+				TargetAttributes = {
+					A7392C4C1CC6E07A0015546C = {
+						CreatedOnToolsVersion = 7.2.1;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					A7392C641CC6E07A0015546C = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = A7392C4C1CC6E07A0015546C;
+					};
+					A7392C6F1CC6E07A0015546C = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = A7392C4C1CC6E07A0015546C;
+					};
+				};
+			};
+			buildConfigurationList = A7392C481CC6E07A0015546C /* Build configuration list for PBXProject "Blocspot" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A7392C441CC6E07A0015546C;
+			productRefGroup = A7392C4E1CC6E07A0015546C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A7392C4C1CC6E07A0015546C /* Blocspot */,
+				A7392C641CC6E07A0015546C /* BlocspotTests */,
+				A7392C6F1CC6E07A0015546C /* BlocspotUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A7392C4B1CC6E07A0015546C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7392C5F1CC6E07A0015546C /* LaunchScreen.storyboard in Resources */,
+				A7B244BD1CCE71B6000AAD69 /* SpotMap.storyboard in Resources */,
+				A7392C5C1CC6E07A0015546C /* Assets.xcassets in Resources */,
+				A7392C5A1CC6E07A0015546C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A7392C631CC6E07A0015546C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A7392C6E1CC6E07A0015546C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A7392C491CC6E07A0015546C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7392C531CC6E07A0015546C /* RootViewController.swift in Sources */,
+				A7B244C71CCE8E4A000AAD69 /* SpotMapViewController.swift in Sources */,
+				A7B244C11CCE896F000AAD69 /* SearchRequest.swift in Sources */,
+				A7392C571CC6E07A0015546C /* ModelController.swift in Sources */,
+				A7B244C31CCE897F000AAD69 /* SearchHistory.swift in Sources */,
+				A7B244BF1CCE894E000AAD69 /* PointOfInterest.swift in Sources */,
+				A7D019FB1CD6A07D00DD3B87 /* BLSDataSource.swift in Sources */,
+				A7392C551CC6E07A0015546C /* DataViewController.swift in Sources */,
+				A7392C511CC6E07A0015546C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A7392C611CC6E07A0015546C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7392C6A1CC6E07A0015546C /* BlocspotTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A7392C6C1CC6E07A0015546C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7392C751CC6E07A0015546C /* BlocspotUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A7392C671CC6E07A0015546C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A7392C4C1CC6E07A0015546C /* Blocspot */;
+			targetProxy = A7392C661CC6E07A0015546C /* PBXContainerItemProxy */;
+		};
+		A7392C721CC6E07A0015546C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A7392C4C1CC6E07A0015546C /* Blocspot */;
+			targetProxy = A7392C711CC6E07A0015546C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A7392C581CC6E07A0015546C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A7392C591CC6E07A0015546C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A7392C5D1CC6E07A0015546C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A7392C5E1CC6E07A0015546C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A7392C771CC6E07A0015546C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A7392C781CC6E07A0015546C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A7392C7A1CC6E07A0015546C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Blocspot/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ozzieozumo.Blocspot;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A7392C7B1CC6E07A0015546C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Blocspot/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ozzieozumo.Blocspot;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		A7392C7D1CC6E07A0015546C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = BlocspotTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ozzieozumo.BlocspotTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Blocspot.app/Blocspot";
+			};
+			name = Debug;
+		};
+		A7392C7E1CC6E07A0015546C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = BlocspotTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ozzieozumo.BlocspotTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Blocspot.app/Blocspot";
+			};
+			name = Release;
+		};
+		A7392C801CC6E07A0015546C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = BlocspotUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ozzieozumo.BlocspotUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Blocspot;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		A7392C811CC6E07A0015546C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = BlocspotUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ozzieozumo.BlocspotUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Blocspot;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A7392C481CC6E07A0015546C /* Build configuration list for PBXProject "Blocspot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A7392C771CC6E07A0015546C /* Debug */,
+				A7392C781CC6E07A0015546C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A7392C791CC6E07A0015546C /* Build configuration list for PBXNativeTarget "Blocspot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A7392C7A1CC6E07A0015546C /* Debug */,
+				A7392C7B1CC6E07A0015546C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A7392C7C1CC6E07A0015546C /* Build configuration list for PBXNativeTarget "BlocspotTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A7392C7D1CC6E07A0015546C /* Debug */,
+				A7392C7E1CC6E07A0015546C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A7392C7F1CC6E07A0015546C /* Build configuration list for PBXNativeTarget "BlocspotUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A7392C801CC6E07A0015546C /* Debug */,
+				A7392C811CC6E07A0015546C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A7392C451CC6E07A0015546C /* Project object */;
+}
