@@ -11,11 +11,13 @@ import CoreLocation
 import MapKit
 
 class PointOfInterest : MKPlacemark {
-    var bls_description :String?
+    var bls_name :String?
+    var bls_note :String?
     
     init(descr: String, place: MKPlacemark) {
         super.init(placemark: place);
-        self.bls_description = descr;
+        self.bls_name = descr;
+        self.bls_note = "";
         
     }
     

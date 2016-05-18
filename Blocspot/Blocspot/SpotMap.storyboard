@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="R3O-CX-teS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="R3O-CX-teS">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Spot Map View Controller-->
+        <!--SpotMap-->
         <scene sceneID="gsJ-8f-zke">
             <objects>
                 <viewController id="R3O-CX-teS" customClass="SpotMapViewController" customModule="Blocspot" customModuleProvider="target" sceneMemberID="viewController">
@@ -14,23 +15,36 @@
                         <viewControllerLayoutGuide type="bottom" id="XSd-FC-vR4"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ni4-QQ-vZf">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="QWJ-sw-Qlh">
-                                <rect key="frame" x="0.0" y="47" width="600" height="545"/>
-                            </mapView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8b6-OP-MVi">
-                                <rect key="frame" x="71" y="9" width="368" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8b6-OP-MVi">
+                                <rect key="frame" x="3" y="27" width="591" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="R3O-CX-teS" id="Wuf-tV-F9x"/>
                                 </connections>
                             </textField>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="QWJ-sw-Qlh">
+                                <rect key="frame" x="0.0" y="62" width="600" height="502"/>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8b6-OP-MVi" firstAttribute="leading" secondItem="Ni4-QQ-vZf" secondAttribute="leadingMargin" constant="5" id="Hq8-fI-77N"/>
+                            <constraint firstItem="QWJ-sw-Qlh" firstAttribute="leading" secondItem="Ni4-QQ-vZf" secondAttribute="leading" id="JXZ-Qd-PAx"/>
+                            <constraint firstItem="QWJ-sw-Qlh" firstAttribute="top" secondItem="8b6-OP-MVi" secondAttribute="bottom" constant="5" id="JgO-IL-pDe"/>
+                            <constraint firstAttribute="trailing" secondItem="QWJ-sw-Qlh" secondAttribute="trailing" id="T7r-F4-pxK"/>
+                            <constraint firstItem="8b6-OP-MVi" firstAttribute="centerX" secondItem="Ni4-QQ-vZf" secondAttribute="centerX" id="Ycf-f1-4Tc"/>
+                            <constraint firstItem="XSd-FC-vR4" firstAttribute="top" secondItem="QWJ-sw-Qlh" secondAttribute="bottom" id="djA-KU-mYc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8b6-OP-MVi" secondAttribute="trailing" constant="5" id="sNk-Ih-qn7"/>
+                            <constraint firstItem="8b6-OP-MVi" firstAttribute="top" secondItem="7B7-vH-w4a" secondAttribute="bottom" constant="7" id="ti6-s5-mlg"/>
+                        </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <tabBarItem key="tabBarItem" title="SpotMap" id="zGm-vq-HcI"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="mapView" destination="QWJ-sw-Qlh" id="TGW-py-UBC"/>
                         <outlet property="txtSearchInput" destination="8b6-OP-MVi" id="nRC-Oa-mPC"/>
