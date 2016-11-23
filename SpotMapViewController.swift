@@ -39,7 +39,7 @@ class SpotMapViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: Text Field Delegate
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
     {
         if (textField == txtSearchInput) {
             // create a search request
@@ -58,8 +58,8 @@ class SpotMapViewController: UIViewController, UITextFieldDelegate {
             let localSearch = MKLocalSearch(request: searchRequest);
             
             
-            localSearch.startWithCompletionHandler {
-                (response: MKLocalSearchResponse?, error: NSError?) in
+            localSearch.start {
+                (response, error) -> Void in
                 
                 print("In search completion handler");
                 

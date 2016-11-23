@@ -20,6 +20,7 @@
 		A7392C5F1CC6E07A0015546C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7392C5D1CC6E07A0015546C /* LaunchScreen.storyboard */; };
 		A7392C6A1CC6E07A0015546C /* BlocspotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7392C691CC6E07A0015546C /* BlocspotTests.swift */; };
 		A7392C751CC6E07A0015546C /* BlocspotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7392C741CC6E07A0015546C /* BlocspotUITests.swift */; };
+		A75817461DE37B3B00435E3E /* heart-orange.png in Resources */ = {isa = PBXBuildFile; fileRef = A75817451DE37B3B00435E3E /* heart-orange.png */; };
 		A7A01F4A1CE3C71900B64A52 /* SpotList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7A01F491CE3C71900B64A52 /* SpotList.storyboard */; };
 		A7B244BB1CCAAE68000AAD69 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7B244BA1CCAAE68000AAD69 /* MapKit.framework */; };
 		A7B244BD1CCE71B6000AAD69 /* SpotMap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7B244BC1CCE71B6000AAD69 /* SpotMap.storyboard */; };
@@ -67,6 +68,7 @@
 		A7392C701CC6E07A0015546C /* BlocspotUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlocspotUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7392C741CC6E07A0015546C /* BlocspotUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlocspotUITests.swift; sourceTree = "<group>"; };
 		A7392C761CC6E07A0015546C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A75817451DE37B3B00435E3E /* heart-orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "heart-orange.png"; sourceTree = "<group>"; };
 		A7A01F491CE3C71900B64A52 /* SpotList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SpotList.storyboard; sourceTree = "<group>"; };
 		A7B244BA1CCAAE68000AAD69 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		A7B244BC1CCE71B6000AAD69 /* SpotMap.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SpotMap.storyboard; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				A7037CE21CEBC27200E87D22 /* SpotDetail.storyboard */,
 				A7037CE41CEBC29100E87D22 /* SpotCategory.storyboard */,
 				A7392C5B1CC6E07A0015546C /* Assets.xcassets */,
+				A75817451DE37B3B00435E3E /* heart-orange.png */,
 				A7392C601CC6E07A0015546C /* Info.plist */,
 				A7B244BE1CCE894E000AAD69 /* PointOfInterest.swift */,
 				A7037CE61CEBC89700E87D22 /* Category.swift */,
@@ -236,6 +239,7 @@
 				TargetAttributes = {
 					A7392C4C1CC6E07A0015546C = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0800;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 1;
@@ -244,10 +248,12 @@
 					};
 					A7392C641CC6E07A0015546C = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = A7392C4C1CC6E07A0015546C;
 					};
 					A7392C6F1CC6E07A0015546C = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = A7392C4C1CC6E07A0015546C;
 					};
 				};
@@ -277,6 +283,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A75817461DE37B3B00435E3E /* heart-orange.png in Resources */,
 				A7392C5F1CC6E07A0015546C /* LaunchScreen.storyboard in Resources */,
 				A7037CE31CEBC27200E87D22 /* SpotDetail.storyboard in Resources */,
 				A7A01F4A1CE3C71900B64A52 /* SpotList.storyboard in Resources */,
@@ -464,6 +471,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ozzieozumo.Blocspot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -475,6 +483,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ozzieozumo.Blocspot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -486,6 +495,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ozzieozumo.BlocspotTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Blocspot.app/Blocspot";
 			};
 			name = Debug;
@@ -498,6 +508,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ozzieozumo.BlocspotTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Blocspot.app/Blocspot";
 			};
 			name = Release;
@@ -509,6 +520,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ozzieozumo.BlocspotUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = Blocspot;
 				USES_XCTRUNNER = YES;
 			};
@@ -521,6 +533,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ozzieozumo.BlocspotUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = Blocspot;
 				USES_XCTRUNNER = YES;
 			};

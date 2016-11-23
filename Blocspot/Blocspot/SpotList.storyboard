@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BZs-oG-AQZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BZs-oG-AQZ">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--SpotList-->
@@ -10,45 +12,63 @@
             <objects>
                 <tableViewController title="SpotList" id="BZs-oG-AQZ" customClass="SpotListViewController" customModule="Blocspot" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" id="YHl-Wd-YQf">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SpotListCell" rowHeight="100" id="5Vf-2W-fty" customClass="SpotListCell" customModule="Blocspot" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="600" height="100"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5Vf-2W-fty" id="suR-PW-KDe">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="99"/>
+                                    <frame key="frameInset" width="375" height="99"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Heart" translatesAutoresizingMaskIntoConstraints="NO" id="Rh7-th-gDw">
-                                            <rect key="frame" x="-1" y="1" width="60" height="45"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HAp-bU-5Ex" userLabel="SpotDistance">
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="A longer note" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4b1-q6-tR7">
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spot Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zXA-le-xf8" userLabel="SpotTitle">
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart-orange.png" translatesAutoresizingMaskIntoConstraints="NO" id="Rh7-th-gDw">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="49" id="JsO-NR-MkW"/>
+                                                <constraint firstAttribute="width" constant="66" id="NTV-rO-Jpa"/>
+                                            </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HAp-bU-5Ex" userLabel="SpotDistance">
-                                            <rect key="frame" x="5" y="54" width="52" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Note" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4b1-q6-tR7">
-                                            <rect key="frame" x="63" y="40" width="479" height="54"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AKS-Z9-uN8">
-                                            <rect key="frame" x="553" y="23" width="41" height="44"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Spot Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zXA-le-xf8" userLabel="SpotTitle">
-                                            <rect key="frame" x="61" y="3" width="488" height="43"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i2z-3L-Cu9">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="65" id="pmU-ZP-1Ox"/>
+                                            </constraints>
+                                            <state key="normal" title="Button"/>
+                                            <connections>
+                                                <segue destination="ODi-fM-IaV" kind="showDetail" id="zLV-K3-mAy"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Rh7-th-gDw" firstAttribute="top" secondItem="suR-PW-KDe" secondAttribute="topMargin" constant="-8" id="2Og-0Z-ZRb"/>
+                                        <constraint firstItem="Rh7-th-gDw" firstAttribute="top" secondItem="zXA-le-xf8" secondAttribute="top" id="4xw-wQ-Zog"/>
+                                        <constraint firstItem="i2z-3L-Cu9" firstAttribute="leading" secondItem="zXA-le-xf8" secondAttribute="trailing" constant="10" id="BWh-vx-Nip"/>
+                                        <constraint firstItem="i2z-3L-Cu9" firstAttribute="top" secondItem="Rh7-th-gDw" secondAttribute="top" id="Kab-xO-1eP"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="i2z-3L-Cu9" secondAttribute="trailing" constant="8" id="Ump-mU-MFw"/>
+                                        <constraint firstItem="4b1-q6-tR7" firstAttribute="top" secondItem="zXA-le-xf8" secondAttribute="bottom" constant="4" id="VkY-zi-FUu"/>
+                                        <constraint firstItem="Rh7-th-gDw" firstAttribute="leading" secondItem="suR-PW-KDe" secondAttribute="leadingMargin" constant="-2" id="gon-GS-e2l"/>
+                                        <constraint firstItem="HAp-bU-5Ex" firstAttribute="leading" secondItem="suR-PW-KDe" secondAttribute="leadingMargin" constant="-2" id="kfk-E4-cs1"/>
+                                        <constraint firstItem="4b1-q6-tR7" firstAttribute="leading" secondItem="Rh7-th-gDw" secondAttribute="trailing" constant="10" id="t6a-p7-EXW"/>
+                                        <constraint firstItem="HAp-bU-5Ex" firstAttribute="top" secondItem="Rh7-th-gDw" secondAttribute="bottom" constant="2" id="vu5-3P-drz"/>
+                                        <constraint firstItem="zXA-le-xf8" firstAttribute="leading" secondItem="Rh7-th-gDw" secondAttribute="trailing" constant="10" id="yVh-yd-Kwb"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="SpotDetailLink" destination="AKS-Z9-uN8" id="YJj-Um-bzb"/>
                                     <outlet property="SpotDistanceIndicator" destination="HAp-bU-5Ex" id="vGg-t9-J8v"/>
                                     <outlet property="SpotNote" destination="4b1-q6-tR7" id="SHb-Nb-TyU"/>
                                     <outlet property="SpotStatusImage" destination="Rh7-th-gDw" id="aip-93-X6C"/>
@@ -66,10 +86,18 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TGZ-tz-qpx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="338" y="426"/>
+            <point key="canvasLocation" x="797.60000000000002" y="476.31184407796104"/>
+        </scene>
+        <!--SpotDetail-->
+        <scene sceneID="I4c-tc-9QN">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SpotDetail" id="ODi-fM-IaV" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kg8-rU-SSN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="815.5" y="279"/>
         </scene>
     </scenes>
     <resources>
-        <image name="Heart" width="16" height="16"/>
+        <image name="heart-orange.png" width="59" height="51"/>
     </resources>
 </document>

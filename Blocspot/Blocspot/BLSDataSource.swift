@@ -14,11 +14,11 @@ class BLSDataSource {
     static let sharedInstance = BLSDataSource()
     var bls_points : [PointOfInterest];
     
-    private init() {
+    fileprivate init() {
         bls_points = [];
     }
     
-    func initWithStaticDefaults ()
+    func populateWithStaticDefaults ()
     
     {
         // instantiate a search manager and search for some nearby locations
@@ -28,6 +28,12 @@ class BLSDataSource {
                              "Downtown Silver Spring",
                              "Rosemary Hills Elementary School",
                              "Apple Store Bethesda Ave"];
+        
+        let default_titles = ["Shops",
+                              "Home",
+                              "Work",
+                              "School",
+                              "MoneyPit"]
         
             
         for dt in default_terms {
@@ -41,7 +47,9 @@ class BLSDataSource {
             let localSearch = MKLocalSearch(request: searchRequest);
             
             
-            localSearch.startWithCompletionHandler {
+            
+            /*
+            localSearch.start {
                 (response: MKLocalSearchResponse?, error: NSError?) in
                 
                 print("In search completion handler");
@@ -53,13 +61,34 @@ class BLSDataSource {
                     // make a new point of interest and save it with the search term as description
                     
                     let poi = PointOfInterest(descr: searchTerm, place: items[0].placemark);
+                    poi.bls_note = default_titles[default_terms.index(of: dt)!]
                     
                     BLSDataSource.sharedInstance.bls_points.append(poi);
                     
                     
                 }
+            } as! MKLocalSearchCompletionHandler
+ */
+            
+            let handler : MKLocalSearchCompletionHandler = {
+                (response, err) -> Void in
+                
+                print("In search completion handler");
+                
+                print("Found \(response?.mapItems.count) map items");
+                
+                if let items = response?.mapItems {
+                    
+                    // make a new point of interest and save it with the search term as description
+                    
+                    let poi = PointOfInterest(descr: searchTerm, place: items[0].placemark);
+                    poi.bls_note = default_titles[default_terms.index(of: dt)!]
+                    
+                    BLSDataSource.sharedInstance.bls_points.append(poi);
+                }
             }
-
+            
+            localSearch.start(completionHandler:handler)
             
         }
         
