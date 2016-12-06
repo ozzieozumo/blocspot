@@ -26,7 +26,27 @@ class SpotListViewController: UITableViewController, CLLocationManagerDelegate {
         
     }
     
-    // MARK - Data Source 
+    
+    func distanceDisplayText (distanceMeters : CLLocationDistance) -> String {
+    
+        let distanceMiles = distanceMeters / 1609.344
+        
+        if distanceMiles < 0.1 {
+            return "< 0.1 mi"
+        }
+        
+        if distanceMiles < 1.0 {
+            return "< 1.0 mi"
+        }
+        
+        if (distanceMiles >= 1.0 && distanceMiles <= 100.0) {
+            return String(format: "%.1f mi", distanceMiles)
+        }
+        else {
+            return "> 100 mi"
+        }
+    }
+    // MARK - Table View Data Source Delegate
     
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -47,6 +67,12 @@ class SpotListViewController: UITableViewController, CLLocationManagerDelegate {
         
         cell.SpotTitle.text = spot.bls_name;
         cell.SpotNote.text = spot.bls_note;
+        if let distance = spot.bls_distance {
+            cell.SpotDistanceIndicator.text = distanceDisplayText(distanceMeters: distance)
+        } else {
+            cell.SpotDistanceIndicator.text = "?";
+        }
+        
         
         
         return cell
@@ -63,7 +89,6 @@ class SpotListViewController: UITableViewController, CLLocationManagerDelegate {
     }
     
     
-    // Mark - Delegate
     
     // Mark - LocationManager Delegate
     
@@ -72,13 +97,25 @@ class SpotListViewController: UITableViewController, CLLocationManagerDelegate {
         // handle the denied error
         
         // keep trying in the event of other errors
-        
-        NSLog("Error from location manager", error.localizedDescription);
+
+        NSLog("Error from location manager %@", error.localizedDescription);
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
+        // recompute distances for all of the saved spots
+        
+        for spot in BLSDataSource.sharedInstance.bls_points {
+            
+            let spotloc = spot.bls_placemark?.location!
+            spot.bls_distance = spotloc?.distance(from: locations[0])
+            
+        }
+        
+        self.tableView.reloadData()
     }
+    
+    
     
     
 

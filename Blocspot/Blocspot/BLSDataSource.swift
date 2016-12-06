@@ -14,10 +14,48 @@ class BLSDataSource {
     static let sharedInstance = BLSDataSource()
     var bls_points : [PointOfInterest];
     
+    var some_array = ["this", "that", "the", "other"];
+    
     fileprivate init() {
         bls_points = [];
     }
     
+    func dataFilePath () -> String {
+        let docsURLs = FileManager.default.urls(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask)
+        var dataURL = docsURLs[0]
+        dataURL.appendPathComponent("spotdata")
+        return dataURL.path
+    }
+    
+    func populateBlocSpotData ()  {
+        
+        if FileManager.default.fileExists(atPath: self.dataFilePath()) {
+            if let spots = NSKeyedUnarchiver.unarchiveObject(withFile: self.dataFilePath()) as? [PointOfInterest] {
+                bls_points = spots
+                print ("Unarchived %d spots", spots.count)
+                
+            } else
+            {
+                print ("Could not unarchive");
+            }
+        
+        } else {
+            populateWithStaticDefaults()
+            
+        }
+
+    }
+    
+    func saveBlocSpotData ()  {
+        
+        let fp = self.dataFilePath()
+        let success = NSKeyedArchiver.archiveRootObject(bls_points, toFile: fp)
+        
+        print("saveBlocSpotData %b", success)
+        
+    }
+
+        
     func populateWithStaticDefaults ()
     
     {
@@ -46,30 +84,6 @@ class BLSDataSource {
             
             let localSearch = MKLocalSearch(request: searchRequest);
             
-            
-            
-            /*
-            localSearch.start {
-                (response: MKLocalSearchResponse?, error: NSError?) in
-                
-                print("In search completion handler");
-                
-                print("Found \(response?.mapItems.count) map items");
-                
-                if let items = response?.mapItems {
-                    
-                    // make a new point of interest and save it with the search term as description
-                    
-                    let poi = PointOfInterest(descr: searchTerm, place: items[0].placemark);
-                    poi.bls_note = default_titles[default_terms.index(of: dt)!]
-                    
-                    BLSDataSource.sharedInstance.bls_points.append(poi);
-                    
-                    
-                }
-            } as! MKLocalSearchCompletionHandler
- */
-            
             let handler : MKLocalSearchCompletionHandler = {
                 (response, err) -> Void in
                 
@@ -81,10 +95,13 @@ class BLSDataSource {
                     
                     // make a new point of interest and save it with the search term as description
                     
-                    let poi = PointOfInterest(descr: searchTerm, place: items[0].placemark);
+                    let poi = PointOfInterest();
+                    poi.bls_placemark = items[0].placemark
+                    poi.bls_name = searchTerm
                     poi.bls_note = default_titles[default_terms.index(of: dt)!]
                     
                     BLSDataSource.sharedInstance.bls_points.append(poi);
+                    BLSDataSource.sharedInstance.saveBlocSpotData();
                 }
             }
             

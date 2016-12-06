@@ -69,11 +69,13 @@ class SpotMapViewController: UIViewController, UITextFieldDelegate {
                     
                     // make a new point of interest and save it with the search term as description
                     
-                    let poi = PointOfInterest(descr: searchTerm, place: items[0].placemark);
+                    let poi = PointOfInterest()
+                    poi.bls_placemark = items[0].placemark
+                    poi.bls_name = searchTerm
                     
                     BLSDataSource.sharedInstance.bls_points.append(poi);
                     
-                    self.mapView.addAnnotation(poi);
+                    self.mapView.addAnnotation(items[0] as! MKAnnotation);
                     
                 }
             };

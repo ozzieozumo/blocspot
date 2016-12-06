@@ -10,18 +10,27 @@ import Foundation
 import CoreLocation
 import MapKit
 
-class PointOfInterest : MKPlacemark {
+class PointOfInterest : NSObject, NSCoding{
+    var bls_placemark : MKPlacemark?
     var bls_name :String?
     var bls_note :String?
+    var bls_distance :CLLocationDistance?
     
-    init(descr: String, place: MKPlacemark) {
-        super.init(placemark: place);
-        self.bls_name = descr;
-        self.bls_note = "";
+    
+    required convenience init?(coder aDecoder: NSCoder) {
         
+        self.init()
+        self.bls_placemark = aDecoder.decodeObject(forKey: "placemark") as? MKPlacemark
+        self.bls_note = aDecoder.decodeObject(forKey: "note") as! String?
+        self.bls_distance = aDecoder.decodeObject(forKey: "distance") as! CLLocationDistance?
+        self.bls_name = aDecoder.decodeObject(forKey: "name") as! String?
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    func encode(with aCoder: NSCoder) {
+        
+        aCoder.encode(bls_placemark, forKey: "placemark")
+        aCoder.encode(bls_name, forKey: "name")
+        aCoder.encode(bls_note, forKey: "note")
+        aCoder.encode(bls_distance, forKey: "distance")
     }
 }
