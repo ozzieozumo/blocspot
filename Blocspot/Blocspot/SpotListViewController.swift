@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 
-class SpotListViewController: UITableViewController, CLLocationManagerDelegate {
+class SpotListViewController: UITableViewController, SpotListCellDelegate, CLLocationManagerDelegate {
     
     let locationManager = CLLocationManager()
     
@@ -26,6 +26,12 @@ class SpotListViewController: UITableViewController, CLLocationManagerDelegate {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        
+        // reload the table view when returning from any subviews 
+        
+        self.tableView.reloadData()
+    }
     
     func distanceDisplayText (distanceMeters : CLLocationDistance) -> String {
     
@@ -63,10 +69,14 @@ class SpotListViewController: UITableViewController, CLLocationManagerDelegate {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "SpotListCell", for: indexPath) as! SpotListCell
         
-        let spot = BLSDataSource.sharedInstance.bls_points[(indexPath as NSIndexPath).row]
+        let row = (indexPath as NSIndexPath).row
+        let spot = BLSDataSource.sharedInstance.bls_points[row]
         
-        cell.SpotTitle.text = spot.bls_name;
-        cell.SpotNote.text = spot.bls_note;
+        cell.spotIndex = row
+        cell.detailButton.tag = row
+        cell.delegate = self
+        cell.SpotTitle.text = spot.bls_name
+        cell.SpotNote.text = spot.bls_note
         if let distance = spot.bls_distance {
             cell.SpotDistanceIndicator.text = distanceDisplayText(distanceMeters: distance)
         } else {
@@ -79,6 +89,10 @@ class SpotListViewController: UITableViewController, CLLocationManagerDelegate {
         
     }
     
+    // Mark - Segue processing
+    
+    
+    
     func itemSelected(_ item:AnyObject) {
         //create segue
        
@@ -88,7 +102,19 @@ class SpotListViewController: UITableViewController, CLLocationManagerDelegate {
     
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "spotdetail") {
+            let destvc: SpotDetailViewController = segue.destination as! SpotDetailViewController
+            // the datasource index was set on the tag when displaying the cell
+            destvc.spotIndex = (sender as! UIButton).tag
+        }
+    }
     
+    /// Mark - SpotListCell Delegate
+    
+    func didTapDetail(row: Int) {
+        performSegue(withIdentifier: "spotdetail", sender: row)
+    }
     
     // Mark - LocationManager Delegate
     

@@ -7,14 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A7037CE31CEBC27200E87D22 /* SpotDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7037CE21CEBC27200E87D22 /* SpotDetail.storyboard */; };
 		A7037CE51CEBC29100E87D22 /* SpotCategory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7037CE41CEBC29100E87D22 /* SpotCategory.storyboard */; };
 		A7037CE71CEBC89700E87D22 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7037CE61CEBC89700E87D22 /* Category.swift */; };
 		A7037CE91CECBD6E00E87D22 /* SpotListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7037CE81CECBD6E00E87D22 /* SpotListViewController.swift */; };
 		A7037CEB1CECBE9900E87D22 /* SpotListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7037CEA1CECBE9900E87D22 /* SpotListCell.swift */; };
 		A7392C511CC6E07A0015546C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7392C501CC6E07A0015546C /* AppDelegate.swift */; };
 		A7392C531CC6E07A0015546C /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7392C521CC6E07A0015546C /* RootViewController.swift */; };
-		A7392C551CC6E07A0015546C /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7392C541CC6E07A0015546C /* DataViewController.swift */; };
+		A7392C551CC6E07A0015546C /* SpotDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7392C541CC6E07A0015546C /* SpotDetailViewController.swift */; };
 		A7392C5A1CC6E07A0015546C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7392C581CC6E07A0015546C /* Main.storyboard */; };
 		A7392C5C1CC6E07A0015546C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7392C5B1CC6E07A0015546C /* Assets.xcassets */; };
 		A7392C5F1CC6E07A0015546C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7392C5D1CC6E07A0015546C /* LaunchScreen.storyboard */; };
@@ -49,7 +48,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A7037CE21CEBC27200E87D22 /* SpotDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SpotDetail.storyboard; sourceTree = "<group>"; };
 		A7037CE41CEBC29100E87D22 /* SpotCategory.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SpotCategory.storyboard; sourceTree = "<group>"; };
 		A7037CE61CEBC89700E87D22 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		A7037CE81CECBD6E00E87D22 /* SpotListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotListViewController.swift; sourceTree = "<group>"; };
@@ -57,7 +55,7 @@
 		A7392C4D1CC6E07A0015546C /* Blocspot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blocspot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7392C501CC6E07A0015546C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7392C521CC6E07A0015546C /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
-		A7392C541CC6E07A0015546C /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
+		A7392C541CC6E07A0015546C /* SpotDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotDetailViewController.swift; sourceTree = "<group>"; };
 		A7392C591CC6E07A0015546C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A7392C5B1CC6E07A0015546C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A7392C5E1CC6E07A0015546C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -131,7 +129,7 @@
 			children = (
 				A7392C501CC6E07A0015546C /* AppDelegate.swift */,
 				A7392C521CC6E07A0015546C /* RootViewController.swift */,
-				A7392C541CC6E07A0015546C /* DataViewController.swift */,
+				A7392C541CC6E07A0015546C /* SpotDetailViewController.swift */,
 				A7B244C61CCE8E4A000AAD69 /* SpotMapViewController.swift */,
 				A7037CE81CECBD6E00E87D22 /* SpotListViewController.swift */,
 				A7037CEA1CECBE9900E87D22 /* SpotListCell.swift */,
@@ -139,7 +137,6 @@
 				A7392C581CC6E07A0015546C /* Main.storyboard */,
 				A7B244BC1CCE71B6000AAD69 /* SpotMap.storyboard */,
 				A7A01F491CE3C71900B64A52 /* SpotList.storyboard */,
-				A7037CE21CEBC27200E87D22 /* SpotDetail.storyboard */,
 				A7037CE41CEBC29100E87D22 /* SpotCategory.storyboard */,
 				A7392C5B1CC6E07A0015546C /* Assets.xcassets */,
 				A75817451DE37B3B00435E3E /* heart-orange.png */,
@@ -285,7 +282,6 @@
 			files = (
 				A75817461DE37B3B00435E3E /* heart-orange.png in Resources */,
 				A7392C5F1CC6E07A0015546C /* LaunchScreen.storyboard in Resources */,
-				A7037CE31CEBC27200E87D22 /* SpotDetail.storyboard in Resources */,
 				A7A01F4A1CE3C71900B64A52 /* SpotList.storyboard in Resources */,
 				A7B244BD1CCE71B6000AAD69 /* SpotMap.storyboard in Resources */,
 				A7392C5C1CC6E07A0015546C /* Assets.xcassets in Resources */,
@@ -323,7 +319,7 @@
 				A7B244C31CCE897F000AAD69 /* SearchHistory.swift in Sources */,
 				A7B244BF1CCE894E000AAD69 /* PointOfInterest.swift in Sources */,
 				A7D019FB1CD6A07D00DD3B87 /* BLSDataSource.swift in Sources */,
-				A7392C551CC6E07A0015546C /* DataViewController.swift in Sources */,
+				A7392C551CC6E07A0015546C /* SpotDetailViewController.swift in Sources */,
 				A7392C511CC6E07A0015546C /* AppDelegate.swift in Sources */,
 				A7037CEB1CECBE9900E87D22 /* SpotListCell.swift in Sources */,
 			);
