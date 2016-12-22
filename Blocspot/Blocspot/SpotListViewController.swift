@@ -30,6 +30,7 @@ class SpotListViewController: UITableViewController, SpotListCellDelegate, CLLoc
         
         // reload the table view when returning from any subviews 
         
+        BLSDataSource.sharedInstance.saveBlocSpotData()
         self.tableView.reloadData()
     }
     

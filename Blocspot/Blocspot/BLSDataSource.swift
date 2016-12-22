@@ -14,8 +14,7 @@ class BLSDataSource {
     static let sharedInstance = BLSDataSource()
     var bls_points : [PointOfInterest];
     
-    var some_array = ["this", "that", "the", "other"];
-    
+        
     fileprivate init() {
         bls_points = [];
     }

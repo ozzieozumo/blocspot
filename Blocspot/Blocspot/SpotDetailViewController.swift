@@ -51,5 +51,7 @@ class SpotDetailViewController: UIViewController {
         self.spot?.bls_note = self.spotNote.text
     }
     
+    
+    
 }
 
