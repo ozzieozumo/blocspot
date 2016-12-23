@@ -16,7 +16,7 @@ class SpotDetailViewController: UIViewController {
     var spot: PointOfInterest?
     @IBOutlet weak var spotName: UITextField!
     @IBOutlet weak var spotNote: UITextField!
-    
+    @IBOutlet weak var spotCategory: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -31,15 +31,19 @@ class SpotDetailViewController: UIViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
+        
         super.viewWillAppear(animated)
         
         // setup labels for the spot
-        
+        let title = spot?.bls_category?.title ?? "Category"
+        spotCategory.setTitle(title, for: .normal)
+        spotCategory.backgroundColor = spot?.bls_category?.color
+
         
     }
 
     override func viewWillDisappear(_ animated: Bool) {
-        BLSDataSource.sharedInstance.bls_points[self.spotIndex] = spot!
+        
     }
 
     @IBAction func spotNameEditingDidEnd(_ sender: AnyObject) {
@@ -51,6 +55,11 @@ class SpotDetailViewController: UIViewController {
         self.spot?.bls_note = self.spotNote.text
     }
     
+    @IBAction func backFromCategoryChooser(segue: UIStoryboardSegue) {
+        NSLog("returning from category chooser")
+        BLSDataSource.sharedInstance.bls_points[self.spotIndex] = spot!
+        BLSDataSource.sharedInstance.saveBlocSpotData()
+    }
     
     
 }

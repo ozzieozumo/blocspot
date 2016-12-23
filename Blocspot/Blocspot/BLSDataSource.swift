@@ -13,10 +13,14 @@ class BLSDataSource {
     
     static let sharedInstance = BLSDataSource()
     var bls_points : [PointOfInterest];
+    var bls_cats: [Category];
+    
+    let standard_colors = [UIColor.orange, UIColor.purple, UIColor.green, UIColor.yellow]
     
         
     fileprivate init() {
         bls_points = [];
+        bls_cats = [];
     }
     
     func dataFilePath () -> String {
@@ -29,9 +33,10 @@ class BLSDataSource {
     func populateBlocSpotData ()  {
         
         if FileManager.default.fileExists(atPath: self.dataFilePath()) {
-            if let spots = NSKeyedUnarchiver.unarchiveObject(withFile: self.dataFilePath()) as? [PointOfInterest] {
-                bls_points = spots
-                print ("Unarchived %d spots", spots.count)
+            if let all_data = NSKeyedUnarchiver.unarchiveObject(withFile: self.dataFilePath()) as? [String:Any] {
+                bls_points = all_data["points"] as! [PointOfInterest]
+                bls_cats = all_data["categories"] as! [Category]
+                print ("Unarchived %d spots", bls_points.count)
                 
             } else
             {
@@ -48,7 +53,8 @@ class BLSDataSource {
     func saveBlocSpotData ()  {
         
         let fp = self.dataFilePath()
-        let success = NSKeyedArchiver.archiveRootObject(bls_points, toFile: fp)
+        let all_data: [String:Any] = ["points": bls_points, "categories": bls_cats]
+        let success = NSKeyedArchiver.archiveRootObject(all_data, toFile: fp)
         
         print("saveBlocSpotData %b", success)
         
@@ -72,7 +78,20 @@ class BLSDataSource {
                               "School",
                               "MoneyPit"]
         
-            
+        let default_categories = ["Restaurants",
+                                  "Bars",
+                                  "Stores",
+                                  "Tourist Traps"]
+        
+        
+        for (index, dc) in default_categories.enumerated() {
+            let cat = Category()
+            cat.title = dc
+            cat.color = standard_colors[index % standard_colors.count]
+            cat.pois = [];
+            bls_cats.append(cat)
+        }
+        
         for dt in default_terms {
             
             let searchRequest = MKLocalSearchRequest();

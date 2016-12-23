@@ -143,7 +143,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jvk-CR-DdV">
                                 <state key="normal" title="Category"/>
                                 <connections>
-                                    <segue destination="dsH-qM-obc" kind="show" id="esc-HE-Hvn"/>
+                                    <segue destination="DhH-Yh-dNg" kind="show" id="wb6-Uf-Pg3"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -180,40 +180,36 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="spotCategory" destination="jvk-CR-DdV" id="Ieq-3o-eG5"/>
                         <outlet property="spotName" destination="fR5-9M-DAq" id="Kb7-b2-6OV"/>
                         <outlet property="spotNote" destination="daK-vi-eKg" id="XLU-5F-qkw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qIi-s6-Zb7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2348" y="475.41229385307349"/>
+            <point key="canvasLocation" x="2324" y="473"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="5I7-cf-17Z">
+        <!--Spot Category View Controller-->
+        <scene sceneID="e3Q-ik-e8p">
             <objects>
-                <viewController id="dsH-qM-obc" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="M6x-tC-LuV"/>
-                        <viewControllerLayoutGuide type="bottom" id="UeY-z1-QFK"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="rpI-8i-JHt">
+                <tableViewController id="DhH-Yh-dNg" customClass="SpotCategoryViewController" customModule="Blocspot" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="vGU-XR-giB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Category Selection VC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u50-rP-C1l">
-                                <frame key="frameInset" minX="59" minY="90" width="191" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qv9-DW-gpz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <connections>
+                            <outlet property="dataSource" destination="DhH-Yh-dNg" id="e4t-tE-32z"/>
+                            <outlet property="delegate" destination="DhH-Yh-dNg" id="xpe-3h-fON"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <segue destination="dyQ-3B-hcz" kind="unwind" identifier="exitCategoryChooser" unwindAction="backFromCategoryChooserWithSegue:" id="bBx-1W-Gnq"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ewo-JE-HDG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="dyQ-3B-hcz" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3133.5999999999999" y="475.41229385307349"/>
+            <point key="canvasLocation" x="3093.5999999999999" y="470.91454272863569"/>
         </scene>
         <!--SpotList-->
         <scene sceneID="WIi-N1-jBA">

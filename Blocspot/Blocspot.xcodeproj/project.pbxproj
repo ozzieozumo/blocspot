@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A7037CE51CEBC29100E87D22 /* SpotCategory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7037CE41CEBC29100E87D22 /* SpotCategory.storyboard */; };
 		A7037CE71CEBC89700E87D22 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7037CE61CEBC89700E87D22 /* Category.swift */; };
 		A7037CE91CECBD6E00E87D22 /* SpotListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7037CE81CECBD6E00E87D22 /* SpotListViewController.swift */; };
 		A7037CEB1CECBE9900E87D22 /* SpotListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7037CEA1CECBE9900E87D22 /* SpotListCell.swift */; };
@@ -19,6 +18,7 @@
 		A7392C5F1CC6E07A0015546C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7392C5D1CC6E07A0015546C /* LaunchScreen.storyboard */; };
 		A7392C6A1CC6E07A0015546C /* BlocspotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7392C691CC6E07A0015546C /* BlocspotTests.swift */; };
 		A7392C751CC6E07A0015546C /* BlocspotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7392C741CC6E07A0015546C /* BlocspotUITests.swift */; };
+		A743243F1E0C30A300D139D2 /* SpotCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A743243E1E0C30A300D139D2 /* SpotCategoryViewController.swift */; };
 		A75817461DE37B3B00435E3E /* heart-orange.png in Resources */ = {isa = PBXBuildFile; fileRef = A75817451DE37B3B00435E3E /* heart-orange.png */; };
 		A7A01F4A1CE3C71900B64A52 /* SpotList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7A01F491CE3C71900B64A52 /* SpotList.storyboard */; };
 		A7B244BB1CCAAE68000AAD69 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7B244BA1CCAAE68000AAD69 /* MapKit.framework */; };
@@ -48,7 +48,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A7037CE41CEBC29100E87D22 /* SpotCategory.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SpotCategory.storyboard; sourceTree = "<group>"; };
 		A7037CE61CEBC89700E87D22 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		A7037CE81CECBD6E00E87D22 /* SpotListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotListViewController.swift; sourceTree = "<group>"; };
 		A7037CEA1CECBE9900E87D22 /* SpotListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotListCell.swift; sourceTree = "<group>"; };
@@ -66,6 +65,7 @@
 		A7392C701CC6E07A0015546C /* BlocspotUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlocspotUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7392C741CC6E07A0015546C /* BlocspotUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlocspotUITests.swift; sourceTree = "<group>"; };
 		A7392C761CC6E07A0015546C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A743243E1E0C30A300D139D2 /* SpotCategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotCategoryViewController.swift; sourceTree = "<group>"; };
 		A75817451DE37B3B00435E3E /* heart-orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "heart-orange.png"; sourceTree = "<group>"; };
 		A7A01F491CE3C71900B64A52 /* SpotList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SpotList.storyboard; sourceTree = "<group>"; };
 		A7B244BA1CCAAE68000AAD69 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -133,11 +133,11 @@
 				A7B244C61CCE8E4A000AAD69 /* SpotMapViewController.swift */,
 				A7037CE81CECBD6E00E87D22 /* SpotListViewController.swift */,
 				A7037CEA1CECBE9900E87D22 /* SpotListCell.swift */,
+				A743243E1E0C30A300D139D2 /* SpotCategoryViewController.swift */,
 				A7392C5D1CC6E07A0015546C /* LaunchScreen.storyboard */,
 				A7392C581CC6E07A0015546C /* Main.storyboard */,
 				A7B244BC1CCE71B6000AAD69 /* SpotMap.storyboard */,
 				A7A01F491CE3C71900B64A52 /* SpotList.storyboard */,
-				A7037CE41CEBC29100E87D22 /* SpotCategory.storyboard */,
 				A7392C5B1CC6E07A0015546C /* Assets.xcassets */,
 				A75817451DE37B3B00435E3E /* heart-orange.png */,
 				A7392C601CC6E07A0015546C /* Info.plist */,
@@ -285,7 +285,6 @@
 				A7A01F4A1CE3C71900B64A52 /* SpotList.storyboard in Resources */,
 				A7B244BD1CCE71B6000AAD69 /* SpotMap.storyboard in Resources */,
 				A7392C5C1CC6E07A0015546C /* Assets.xcassets in Resources */,
-				A7037CE51CEBC29100E87D22 /* SpotCategory.storyboard in Resources */,
 				A7392C5A1CC6E07A0015546C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -311,6 +310,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A743243F1E0C30A300D139D2 /* SpotCategoryViewController.swift in Sources */,
 				A7392C531CC6E07A0015546C /* RootViewController.swift in Sources */,
 				A7037CE71CEBC89700E87D22 /* Category.swift in Sources */,
 				A7B244C71CCE8E4A000AAD69 /* SpotMapViewController.swift in Sources */,
