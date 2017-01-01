@@ -62,7 +62,7 @@ class SpotListViewController: UITableViewController, SpotListCellDelegate, CLLoc
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 5;
+        return BLSDataSource.sharedInstance.bls_points.count;
         
     }
     

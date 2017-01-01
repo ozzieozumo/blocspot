@@ -15,6 +15,7 @@ class SpotMapViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var txtSearchInput: UITextField!
     @IBOutlet weak var mapView: MKMapView!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,6 +27,18 @@ class SpotMapViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        
+        self.mapView.removeAnnotations(self.mapView.annotations)
+        
+        for poi in BLSDataSource.sharedInstance.bls_points {
+        
+            let annotation = SpotMapAnnotation(poi: poi)
+            self.mapView.addAnnotation(annotation)
+        
+        }
+        
+    }
 
     /*
     // MARK: - Navigation
@@ -74,8 +87,10 @@ class SpotMapViewController: UIViewController, UITextFieldDelegate {
                     poi.bls_name = searchTerm
                     
                     BLSDataSource.sharedInstance.bls_points.append(poi);
+                    BLSDataSource.sharedInstance.saveBlocSpotData()
                     
-                    self.mapView.addAnnotation(items[0] as! MKAnnotation);
+                    let annotation = SpotMapAnnotation(poi: poi)
+                    self.mapView.addAnnotation(annotation);
                     
                 }
             };
@@ -87,5 +102,16 @@ class SpotMapViewController: UIViewController, UITextFieldDelegate {
         return true;
     }
     
-
 }
+
+// MARK: MapView Delegate
+/*
+extension SpotMapViewController: MKMapViewDelegate {
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        // do I need to use subclass MKAnnotation to get the poi data?
+        // can I call super method from within an extension 
+        
+    }
+}
+*/

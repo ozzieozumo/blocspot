@@ -19,6 +19,7 @@
 		A7392C6A1CC6E07A0015546C /* BlocspotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7392C691CC6E07A0015546C /* BlocspotTests.swift */; };
 		A7392C751CC6E07A0015546C /* BlocspotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7392C741CC6E07A0015546C /* BlocspotUITests.swift */; };
 		A743243F1E0C30A300D139D2 /* SpotCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A743243E1E0C30A300D139D2 /* SpotCategoryViewController.swift */; };
+		A74409271E12F87A00D1F2DA /* SpotMapAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74409261E12F87A00D1F2DA /* SpotMapAnnotationView.swift */; };
 		A75817461DE37B3B00435E3E /* heart-orange.png in Resources */ = {isa = PBXBuildFile; fileRef = A75817451DE37B3B00435E3E /* heart-orange.png */; };
 		A7A01F4A1CE3C71900B64A52 /* SpotList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7A01F491CE3C71900B64A52 /* SpotList.storyboard */; };
 		A7B244BB1CCAAE68000AAD69 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7B244BA1CCAAE68000AAD69 /* MapKit.framework */; };
@@ -28,6 +29,7 @@
 		A7B244C31CCE897F000AAD69 /* SearchHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B244C21CCE897F000AAD69 /* SearchHistory.swift */; };
 		A7B244C71CCE8E4A000AAD69 /* SpotMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B244C61CCE8E4A000AAD69 /* SpotMapViewController.swift */; };
 		A7D019FB1CD6A07D00DD3B87 /* BLSDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D019FA1CD6A07D00DD3B87 /* BLSDataSource.swift */; };
+		A7DE208F1E18A20D00E8719C /* SpotMapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DE208E1E18A20D00E8719C /* SpotMapAnnotation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,7 @@
 		A7392C741CC6E07A0015546C /* BlocspotUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlocspotUITests.swift; sourceTree = "<group>"; };
 		A7392C761CC6E07A0015546C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A743243E1E0C30A300D139D2 /* SpotCategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotCategoryViewController.swift; sourceTree = "<group>"; };
+		A74409261E12F87A00D1F2DA /* SpotMapAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotMapAnnotationView.swift; sourceTree = "<group>"; };
 		A75817451DE37B3B00435E3E /* heart-orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "heart-orange.png"; sourceTree = "<group>"; };
 		A7A01F491CE3C71900B64A52 /* SpotList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SpotList.storyboard; sourceTree = "<group>"; };
 		A7B244BA1CCAAE68000AAD69 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -75,6 +78,7 @@
 		A7B244C21CCE897F000AAD69 /* SearchHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchHistory.swift; sourceTree = "<group>"; };
 		A7B244C61CCE8E4A000AAD69 /* SpotMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpotMapViewController.swift; path = ../../SpotMapViewController.swift; sourceTree = "<group>"; };
 		A7D019FA1CD6A07D00DD3B87 /* BLSDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLSDataSource.swift; sourceTree = "<group>"; };
+		A7DE208E1E18A20D00E8719C /* SpotMapAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotMapAnnotation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +136,8 @@
 				A7392C541CC6E07A0015546C /* SpotDetailViewController.swift */,
 				A7B244C61CCE8E4A000AAD69 /* SpotMapViewController.swift */,
 				A7037CE81CECBD6E00E87D22 /* SpotListViewController.swift */,
+				A7DE208E1E18A20D00E8719C /* SpotMapAnnotation.swift */,
+				A74409261E12F87A00D1F2DA /* SpotMapAnnotationView.swift */,
 				A7037CEA1CECBE9900E87D22 /* SpotListCell.swift */,
 				A743243E1E0C30A300D139D2 /* SpotCategoryViewController.swift */,
 				A7392C5D1CC6E07A0015546C /* LaunchScreen.storyboard */,
@@ -231,7 +237,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = ozzieozumo;
 				TargetAttributes = {
 					A7392C4C1CC6E07A0015546C = {
@@ -315,12 +321,14 @@
 				A7037CE71CEBC89700E87D22 /* Category.swift in Sources */,
 				A7B244C71CCE8E4A000AAD69 /* SpotMapViewController.swift in Sources */,
 				A7037CE91CECBD6E00E87D22 /* SpotListViewController.swift in Sources */,
+				A7DE208F1E18A20D00E8719C /* SpotMapAnnotation.swift in Sources */,
 				A7B244C11CCE896F000AAD69 /* SearchRequest.swift in Sources */,
 				A7B244C31CCE897F000AAD69 /* SearchHistory.swift in Sources */,
 				A7B244BF1CCE894E000AAD69 /* PointOfInterest.swift in Sources */,
 				A7D019FB1CD6A07D00DD3B87 /* BLSDataSource.swift in Sources */,
 				A7392C551CC6E07A0015546C /* SpotDetailViewController.swift in Sources */,
 				A7392C511CC6E07A0015546C /* AppDelegate.swift in Sources */,
+				A74409271E12F87A00D1F2DA /* SpotMapAnnotationView.swift in Sources */,
 				A7037CEB1CECBE9900E87D22 /* SpotListCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -389,8 +397,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -434,8 +444,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -454,6 +466,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
