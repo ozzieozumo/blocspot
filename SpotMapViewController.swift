@@ -20,6 +20,9 @@ class SpotMapViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        mapView.delegate = self
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -105,13 +108,18 @@ class SpotMapViewController: UIViewController, UITextFieldDelegate {
 }
 
 // MARK: MapView Delegate
-/*
 extension SpotMapViewController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        // do I need to use subclass MKAnnotation to get the poi data?
-        // can I call super method from within an extension 
         
+        if let sma = annotation as? SpotMapAnnotation {
+            
+            return SpotMapAnnotationView(annotation: sma, reuseIdentifier: "blspoints")
+            
+        } else {
+            return nil
+        }
     }
+    
 }
-*/
+
