@@ -90,6 +90,18 @@ class SpotListViewController: UITableViewController, SpotListCellDelegate, CLLoc
         
     }
     
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        print("Commiting deletion")
+        if (editingStyle == .delete) {
+            BLSDataSource.sharedInstance.deleteAtIndex(indexPath.row)
+            self.tableView.reloadData()
+        }
+    }
+    
     // Mark - Segue processing
     
     

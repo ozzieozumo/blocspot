@@ -33,7 +33,6 @@ class SpotMapAnnotationView: MKPinAnnotationView {
             
         }
         
-        
     }
  
     
@@ -47,7 +46,6 @@ class SpotMapAnnotationView: MKPinAnnotationView {
            I think it would be possible to create a more complicated view with subviews here, but the leable containing 
            the title will always be there (unless showCallOut is FALSE)
         */
- 
  
         let note = UILabel()
         let labelstr: String = (poi.bls_note ?? "BLS Note")

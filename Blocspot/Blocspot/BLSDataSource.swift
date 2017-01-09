@@ -60,7 +60,12 @@ class BLSDataSource {
         
     }
 
-        
+    func deleteAtIndex(_ i: Int) {
+        // Delete references from the categories then delete the point itself
+        bls_points.remove(at: i)
+        self.saveBlocSpotData()
+    }
+    
     func populateWithStaticDefaults ()
     
     {
