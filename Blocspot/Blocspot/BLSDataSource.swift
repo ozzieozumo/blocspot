@@ -134,5 +134,10 @@ class BLSDataSource {
         
     }
     
+    func nextCategoryColor() -> UIColor {
+        
+        return standard_colors[bls_cats.count % standard_colors.count]
+
+    }
     
 }

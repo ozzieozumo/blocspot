@@ -29,6 +29,7 @@
 		A7B244C31CCE897F000AAD69 /* SearchHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B244C21CCE897F000AAD69 /* SearchHistory.swift */; };
 		A7B244C71CCE8E4A000AAD69 /* SpotMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B244C61CCE8E4A000AAD69 /* SpotMapViewController.swift */; };
 		A7D019FB1CD6A07D00DD3B87 /* BLSDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D019FA1CD6A07D00DD3B87 /* BLSDataSource.swift */; };
+		A7D9193A1E25476200AAE562 /* SpotCategoryAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D919391E25476200AAE562 /* SpotCategoryAddViewController.swift */; };
 		A7DE208F1E18A20D00E8719C /* SpotMapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DE208E1E18A20D00E8719C /* SpotMapAnnotation.swift */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +79,7 @@
 		A7B244C21CCE897F000AAD69 /* SearchHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchHistory.swift; sourceTree = "<group>"; };
 		A7B244C61CCE8E4A000AAD69 /* SpotMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpotMapViewController.swift; path = ../../SpotMapViewController.swift; sourceTree = "<group>"; };
 		A7D019FA1CD6A07D00DD3B87 /* BLSDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLSDataSource.swift; sourceTree = "<group>"; };
+		A7D919391E25476200AAE562 /* SpotCategoryAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotCategoryAddViewController.swift; sourceTree = "<group>"; };
 		A7DE208E1E18A20D00E8719C /* SpotMapAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotMapAnnotation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -140,6 +142,7 @@
 				A74409261E12F87A00D1F2DA /* SpotMapAnnotationView.swift */,
 				A7037CEA1CECBE9900E87D22 /* SpotListCell.swift */,
 				A743243E1E0C30A300D139D2 /* SpotCategoryViewController.swift */,
+				A7D919391E25476200AAE562 /* SpotCategoryAddViewController.swift */,
 				A7392C5D1CC6E07A0015546C /* LaunchScreen.storyboard */,
 				A7392C581CC6E07A0015546C /* Main.storyboard */,
 				A7B244BC1CCE71B6000AAD69 /* SpotMap.storyboard */,
@@ -322,6 +325,7 @@
 				A7B244C71CCE8E4A000AAD69 /* SpotMapViewController.swift in Sources */,
 				A7037CE91CECBD6E00E87D22 /* SpotListViewController.swift in Sources */,
 				A7DE208F1E18A20D00E8719C /* SpotMapAnnotation.swift in Sources */,
+				A7D9193A1E25476200AAE562 /* SpotCategoryAddViewController.swift in Sources */,
 				A7B244C11CCE896F000AAD69 /* SearchRequest.swift in Sources */,
 				A7B244C31CCE897F000AAD69 /* SearchHistory.swift in Sources */,
 				A7B244BF1CCE894E000AAD69 /* PointOfInterest.swift in Sources */,

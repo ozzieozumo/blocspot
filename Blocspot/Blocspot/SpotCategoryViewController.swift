@@ -21,6 +21,13 @@ class SpotCategoryViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        
+        // reload the table view when returning from any subviews
+        
+        self.tableView.reloadData()
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -34,8 +41,7 @@ class SpotCategoryViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 4
+        return BLSDataSource.sharedInstance.bls_cats.count
     }
 
     
@@ -66,6 +72,12 @@ class SpotCategoryViewController: UITableViewController {
         }
     }
    
+    @IBAction func backFromCategoryAdd(segue: UIStoryboardSegue) {
+        NSLog("returning from category add")
+        self.tableView.reloadData()
+        
+    }
+
     
     /*
     // Override to support conditional editing of the table view.
