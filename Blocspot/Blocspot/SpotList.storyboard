@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5Vf-2W-fty" id="suR-PW-KDe">
-                                    <frame key="frameInset" width="375" height="100"/>
+                                    <frame key="frameInset" width="375" height="99"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HAp-bU-5Ex" userLabel="SpotDistance">
@@ -266,6 +266,9 @@
                                 <frame key="frameInset" minX="23" minY="235" width="48" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelAdd:" destination="lYp-To-3dX" eventType="touchUpInside" id="zNR-JY-eJy"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ctp-Uv-d4T">
                                 <frame key="frameInset" minX="275" minY="233" width="46" height="30"/>
@@ -286,7 +289,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6vI-W6-vSR" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="EFw-r2-5Pr" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4044" y="472"/>
+            <point key="canvasLocation" x="4044" y="471.8140929535233"/>
         </scene>
         <!--SpotList-->
         <scene sceneID="WIi-N1-jBA">

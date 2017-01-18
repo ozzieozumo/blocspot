@@ -15,7 +15,11 @@ class BLSDataSource {
     var bls_points : [PointOfInterest];
     var bls_cats: [Category];
     
-    let standard_colors = [UIColor.orange, UIColor.purple, UIColor.green, UIColor.yellow]
+    let standard_colors = [UIColor(hex: 0x395662),
+                           UIColor(hex: 0x2A9D8F),
+                           UIColor(hex: 0xE9C46A),
+                           UIColor(hex: 0xF4A261),
+                           UIColor(hex: 0xE76F51) ]
     
         
     fileprivate init() {
@@ -138,6 +142,19 @@ class BLSDataSource {
         
         return standard_colors[bls_cats.count % standard_colors.count]
 
+    }
+    
+}
+
+extension UIColor {
+    
+    convenience init(hex: Int) {
+        let components = (
+            R: CGFloat((hex >> 16) & 0xff) / 255,
+            G: CGFloat((hex >> 08) & 0xff) / 255,
+            B: CGFloat((hex >> 00) & 0xff) / 255
+        )
+        self.init(red: components.R, green: components.G, blue: components.B, alpha: 1)
     }
     
 }

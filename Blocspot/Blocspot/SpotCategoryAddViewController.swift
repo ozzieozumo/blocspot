@@ -35,6 +35,9 @@ class SpotCategoryAddViewController: UIViewController {
 
    @IBOutlet weak var newcatName: UITextField!
     
+    @IBAction func cancelAdd(_ sender: AnyObject) {
+        self.performSegue(withIdentifier: "exitAddCategory", sender: sender)
+    }
    @IBAction func addCategory(_ sender: AnyObject) {
         
         // if name is empty, just cancel
@@ -61,7 +64,7 @@ class SpotCategoryAddViewController: UIViewController {
             
         } else {
             
-            let alertController = UIAlertController(title: "Cannot Add", message: "This category already exist", preferredStyle: UIAlertControllerStyle.alert)
+            let alertController = UIAlertController(title: "Cannot Add", message: "This category already exists", preferredStyle: UIAlertControllerStyle.alert)
             
             let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default)
             {
