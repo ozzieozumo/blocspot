@@ -9,6 +9,7 @@
 import UIKit
 import CoreLocation
 
+
 class SpotListViewController: UITableViewController, SpotListCellDelegate, CLLocationManagerDelegate {
     
     let locationManager = CLLocationManager()
@@ -122,6 +123,7 @@ class SpotListViewController: UITableViewController, SpotListCellDelegate, CLLoc
             destvc.spotIndex = (sender as! UIButton).tag
         }
     }
+    
     
     /// Mark - SpotListCell Delegate
     

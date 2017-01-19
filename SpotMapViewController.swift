@@ -15,6 +15,8 @@ class SpotMapViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var txtSearchInput: UITextField!
     @IBOutlet weak var mapView: MKMapView!
     
+    var defaultRegionSet: Bool = false;
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,8 +40,37 @@ class SpotMapViewController: UIViewController, UITextFieldDelegate {
         
             let annotation = SpotMapAnnotation(poi: poi)
             self.mapView.addAnnotation(annotation)
+            
         
         }
+        
+        if !self.defaultRegionSet {
+            
+            // On the first time, set the map region to contain all of the annotations
+            //self.mapView.showAnnotations(self.mapView.annotations, animated: true)
+            
+            // Set the default region to 500m around the first annotation
+            
+            centerMapOnAnnotation(annotation: self.mapView.annotations[0], radiuskm: 0.25)
+            
+            self.defaultRegionSet = true
+        }
+        
+    }
+    
+    func centerMapOnAnnotation(annotation: MKAnnotation, radiuskm: Double) {
+        
+        // Center the map on one of its annotations, and zoom to a specified radius
+        
+        
+        var region: MKCoordinateRegion;
+        let lat: CLLocationDistance = radiuskm * 1000.0;
+        let lng: CLLocationDistance = radiuskm * 1000.0;
+        
+        region = MKCoordinateRegionMakeWithDistance(annotation.coordinate, lat, lng)
+        
+        self.mapView.setRegion(region, animated: true)
+        
         
     }
 
