@@ -31,7 +31,19 @@ class SpotMapAnnotationView: MKPinAnnotationView {
             
             self.detailCalloutAccessoryView = calloutView(poi: sma.poi!)
             
+            switch sma.type {
+            case .Favorite:
+                self.pinTintColor = UIColor.green
+                
+            case .Candidate:
+                self.pinTintColor = UIColor.yellow
+                self.leftCalloutAccessoryView = candidateDiscardButton()
+                self.rightCalloutAccessoryView = candidateSaveButton()
+                
+            }
+            
         }
+        
         
     }
  
@@ -54,6 +66,28 @@ class SpotMapAnnotationView: MKPinAnnotationView {
         note.layer.borderColor = UIColor.orange.cgColor
         
         return note
+    }
+    
+    func candidateDiscardButton() -> UIView {
+        
+        let btn = UIButton()
+        btn.titleLabel?.text = "Lose It"
+        
+        btn.layer.borderWidth = 1.0;
+        btn.layer.borderColor = UIColor.yellow.cgColor
+        
+        return btn
+    }
+    
+    func candidateSaveButton() -> UIView {
+        
+        let btn = UIButton()
+        btn.titleLabel?.text = "Keep It"
+        
+        btn.layer.borderWidth = 1.0;
+        btn.layer.borderColor = UIColor.yellow.cgColor
+        
+        return btn
     }
     
 }

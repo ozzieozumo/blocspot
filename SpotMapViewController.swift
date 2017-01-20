@@ -51,7 +51,7 @@ class SpotMapViewController: UIViewController, UITextFieldDelegate {
             
             // Set the default region to 500m around the first annotation
             
-            centerMapOnAnnotation(annotation: self.mapView.annotations[0], radiuskm: 0.25)
+            centerMapOnAnnotation(annotation: self.mapView.annotations[0], radiuskm: 10)
             
             self.defaultRegionSet = true
         }
@@ -73,6 +73,17 @@ class SpotMapViewController: UIViewController, UITextFieldDelegate {
         
         
     }
+    
+    func deleteCandidateAnnotations() {
+        
+        for annotation in self.mapView.annotations {
+            if let sma = annotation as? SpotMapAnnotation {
+                if sma.type == BlocSpotAnnotationType.Candidate {
+                    self.mapView.removeAnnotation(sma)
+                }
+            }
+        }
+    }
 
     /*
     // MARK: - Navigation
@@ -89,6 +100,11 @@ class SpotMapViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool
     {
         if (textField == txtSearchInput) {
+            
+            // delete any existing candidate spots
+            
+            self.deleteCandidateAnnotations()
+            
             // create a search request
             print("Search string is \(textField.text!)");
             
@@ -112,18 +128,16 @@ class SpotMapViewController: UIViewController, UITextFieldDelegate {
                 
                 print("Found \(response?.mapItems.count) map items");
                 
-                if let items = response?.mapItems {
+                for item in response?.mapItems ?? [] {
                     
                     // make a new point of interest and save it with the search term as description
                     
                     let poi = PointOfInterest()
-                    poi.bls_placemark = items[0].placemark
+                    poi.bls_placemark = item.placemark
                     poi.bls_name = searchTerm
                     
-                    BLSDataSource.sharedInstance.bls_points.append(poi);
-                    BLSDataSource.sharedInstance.saveBlocSpotData()
-                    
                     let annotation = SpotMapAnnotation(poi: poi)
+                    annotation.type = BlocSpotAnnotationType.Candidate
                     self.mapView.addAnnotation(annotation);
                     
                 }

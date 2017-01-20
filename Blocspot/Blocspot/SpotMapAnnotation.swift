@@ -9,12 +9,18 @@
 import UIKit
 import MapKit
 
+enum BlocSpotAnnotationType {
+    case Favorite   // saved spot
+    case Candidate  // search result or similar candidate
+}
+
 class SpotMapAnnotation: NSObject, MKAnnotation {
 
     var coordinate: CLLocationCoordinate2D = CLLocationCoordinate2D()
     var title: String?
     var subtitle: String?
     var poi : PointOfInterest?
+    var type: BlocSpotAnnotationType = BlocSpotAnnotationType.Favorite
     
     init (poi : PointOfInterest) {
         if let pm = poi.bls_placemark {
