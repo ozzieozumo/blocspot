@@ -20,7 +20,7 @@
 		A7392C751CC6E07A0015546C /* BlocspotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7392C741CC6E07A0015546C /* BlocspotUITests.swift */; };
 		A743243F1E0C30A300D139D2 /* SpotCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A743243E1E0C30A300D139D2 /* SpotCategoryViewController.swift */; };
 		A74409271E12F87A00D1F2DA /* SpotMapAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74409261E12F87A00D1F2DA /* SpotMapAnnotationView.swift */; };
-		A75817461DE37B3B00435E3E /* heart-orange.png in Resources */ = {isa = PBXBuildFile; fileRef = A75817451DE37B3B00435E3E /* heart-orange.png */; };
+		A75817461DE37B3B00435E3E /* heart-orange_original.png in Resources */ = {isa = PBXBuildFile; fileRef = A75817451DE37B3B00435E3E /* heart-orange_original.png */; };
 		A7A01F4A1CE3C71900B64A52 /* SpotList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7A01F491CE3C71900B64A52 /* SpotList.storyboard */; };
 		A7B244BB1CCAAE68000AAD69 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7B244BA1CCAAE68000AAD69 /* MapKit.framework */; };
 		A7B244BD1CCE71B6000AAD69 /* SpotMap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7B244BC1CCE71B6000AAD69 /* SpotMap.storyboard */; };
@@ -70,7 +70,7 @@
 		A7392C761CC6E07A0015546C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A743243E1E0C30A300D139D2 /* SpotCategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotCategoryViewController.swift; sourceTree = "<group>"; };
 		A74409261E12F87A00D1F2DA /* SpotMapAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotMapAnnotationView.swift; sourceTree = "<group>"; };
-		A75817451DE37B3B00435E3E /* heart-orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "heart-orange.png"; sourceTree = "<group>"; };
+		A75817451DE37B3B00435E3E /* heart-orange_original.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "heart-orange_original.png"; sourceTree = "<group>"; };
 		A7A01F491CE3C71900B64A52 /* SpotList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SpotList.storyboard; sourceTree = "<group>"; };
 		A7B244BA1CCAAE68000AAD69 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		A7B244BC1CCE71B6000AAD69 /* SpotMap.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SpotMap.storyboard; sourceTree = "<group>"; };
@@ -148,7 +148,7 @@
 				A7B244BC1CCE71B6000AAD69 /* SpotMap.storyboard */,
 				A7A01F491CE3C71900B64A52 /* SpotList.storyboard */,
 				A7392C5B1CC6E07A0015546C /* Assets.xcassets */,
-				A75817451DE37B3B00435E3E /* heart-orange.png */,
+				A75817451DE37B3B00435E3E /* heart-orange_original.png */,
 				A7392C601CC6E07A0015546C /* Info.plist */,
 				A7B244BE1CCE894E000AAD69 /* PointOfInterest.swift */,
 				A7037CE61CEBC89700E87D22 /* Category.swift */,
@@ -289,7 +289,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A75817461DE37B3B00435E3E /* heart-orange.png in Resources */,
+				A75817461DE37B3B00435E3E /* heart-orange_original.png in Resources */,
 				A7392C5F1CC6E07A0015546C /* LaunchScreen.storyboard in Resources */,
 				A7A01F4A1CE3C71900B64A52 /* SpotList.storyboard in Resources */,
 				A7B244BD1CCE71B6000AAD69 /* SpotMap.storyboard in Resources */,

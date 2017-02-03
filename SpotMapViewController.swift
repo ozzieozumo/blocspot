@@ -49,9 +49,13 @@ class SpotMapViewController: UIViewController, UITextFieldDelegate {
             // On the first time, set the map region to contain all of the annotations
             //self.mapView.showAnnotations(self.mapView.annotations, animated: true)
             
-            // Set the default region to 500m around the first annotation
+            // Set the default region to 1km around the first annotation
             
-            centerMapOnAnnotation(annotation: self.mapView.annotations[0], radiuskm: 10)
+            if self.mapView.annotations.count > 0 {
+                
+                centerMapOnAnnotation(annotation: self.mapView.annotations[0], radiuskm: 1)
+                
+            }
             
             self.defaultRegionSet = true
         }
@@ -164,6 +168,41 @@ extension SpotMapViewController: MKMapViewDelegate {
         } else {
             return nil
         }
+    }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        // Test which control was tapped and either save or delete the candidate spot
+        
+        if control.tag == 1  {
+            //Discard
+            
+            mapView.removeAnnotation(view.annotation!)
+            
+        }
+        
+        if control.tag == 2 {
+            // Convert to a favorite POI and save it in the data source
+            
+            
+            
+            let sma = (view.annotation) as! SpotMapAnnotation
+            if let poi = sma.poi {
+            
+                BLSDataSource.sharedInstance.bls_points.append(poi);
+                BLSDataSource.sharedInstance.saveBlocSpotData();
+                
+                sma.type = BlocSpotAnnotationType.Favorite
+                (view as! MKPinAnnotationView).pinTintColor = UIColor.green
+                
+                mapView.deselectAnnotation(sma, animated: true)
+                
+            }
+
+            
+            
+        }
+        
+        
     }
     
 }

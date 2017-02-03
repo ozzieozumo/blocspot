@@ -71,10 +71,13 @@ class SpotMapAnnotationView: MKPinAnnotationView {
     func candidateDiscardButton() -> UIView {
         
         let btn = UIButton()
-        btn.titleLabel?.text = "Lose It"
+        btn.tag = 1
+        btn.setBackgroundImage(UIImage(named: "pushpin-7"), for: .normal)
+        //btn.setTitle("Lose It", for: .normal)
+        //btn.setTitleColor(UIColor.blue, for: .normal)
+        btn.sizeToFit()
         
-        btn.layer.borderWidth = 1.0;
-        btn.layer.borderColor = UIColor.yellow.cgColor
+        
         
         return btn
     }
@@ -82,10 +85,11 @@ class SpotMapAnnotationView: MKPinAnnotationView {
     func candidateSaveButton() -> UIView {
         
         let btn = UIButton()
-        btn.titleLabel?.text = "Keep It"
-        
-        btn.layer.borderWidth = 1.0;
-        btn.layer.borderColor = UIColor.yellow.cgColor
+        btn.tag = 2
+        btn.setBackgroundImage(UIImage(named: "heart-7"), for: .normal)
+        //btn.setTitle("Keep It", for: .normal)
+        //btn.setTitleColor(UIColor.blue, for: .normal)
+        btn.sizeToFit()
         
         return btn
     }
