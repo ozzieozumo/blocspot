@@ -12,6 +12,8 @@ import CoreLocation
 
 class SpotListViewController: UITableViewController, SpotListCellDelegate, CLLocationManagerDelegate {
     
+    var filters : [String] = []
+    
     let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
@@ -60,8 +62,7 @@ class SpotListViewController: UITableViewController, SpotListCellDelegate, CLLoc
     
     @IBAction func filterByCategory(_ sender: AnyObject) {
         
-        BLSDataSource.sharedInstance.applyCategoryFilters(filters: ["Restaurants"])
-        self.tableView.reloadData()
+        performSegue(withIdentifier: "chooseFilterCategory", sender: sender)
     }
     
     @IBAction func unFilterByCategory(_ sender: AnyObject) {
@@ -69,7 +70,6 @@ class SpotListViewController: UITableViewController, SpotListCellDelegate, CLLoc
         self.tableView.reloadData()
     }
     // MARK - Table View Data Source Delegate
-    
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1;
@@ -170,7 +170,11 @@ class SpotListViewController: UITableViewController, SpotListCellDelegate, CLLoc
         self.tableView.reloadData()
     }
     
-    
+    @IBAction func backFromCategoryChooser(segue: UIStoryboardSegue) {
+        NSLog("returning from category chooser")
+        BLSDataSource.sharedInstance.applyCategoryFilters(filters: self.filters)
+        self.tableView.reloadData()
+    }
     
     
 

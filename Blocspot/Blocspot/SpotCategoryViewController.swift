@@ -65,10 +65,20 @@ class SpotCategoryViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "exitCategoryChooser" {
-            let destvc = segue.destination as! SpotDetailViewController
+            
             let row = sender as! Int
             let cat = BLSDataSource.sharedInstance.bls_cats[row]
-            destvc.spot?.bls_category = cat
+            
+            
+            if segue.destination is SpotDetailViewController {
+                let sdvc = segue.destination as! SpotDetailViewController
+                sdvc.spot?.bls_category = cat
+            }
+            
+            if segue.destination is SpotListViewController {
+                let slvc = segue.destination as! SpotListViewController
+                slvc.filters = [cat.title!]
+            }
         }
     }
    

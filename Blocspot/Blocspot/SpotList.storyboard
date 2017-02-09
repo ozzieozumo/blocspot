@@ -100,10 +100,13 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="DhH-Yh-dNg" kind="show" identifier="chooseFilterCategory" id="qPi-J7-0Ov"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TGZ-tz-qpx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1528.8" y="477.21139430284859"/>
+            <point key="canvasLocation" x="1414" y="475"/>
         </scene>
         <!--Spot Detail View Controller-->
         <scene sceneID="eyl-Ke-wsr">
@@ -201,7 +204,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qIi-s6-Zb7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2324" y="473"/>
+            <point key="canvasLocation" x="2260" y="875"/>
         </scene>
         <!--Title-->
         <scene sceneID="e3Q-ik-e8p">
@@ -337,4 +340,7 @@
         <image name="heart-orange" width="29" height="25"/>
         <image name="unfilter" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="qPi-J7-0Ov"/>
+    </inferredMetricsTieBreakers>
 </document>
