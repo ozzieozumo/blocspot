@@ -9,11 +9,22 @@
 import Foundation
 import MapKit
 
+
 class BLSDataSource {
     
+    
     static let sharedInstance = BLSDataSource()
-    var bls_points : [PointOfInterest];
     var bls_cats: [Category];
+    
+    var bls_points : [PointOfInterest] {
+        get {
+            return bls_CategoryFilters.count > 0 ? bls_FilteredPoints : bls_AllPoints
+            }
+        }
+    private var bls_AllPoints : [PointOfInterest]     // all points from the data source
+    private var bls_FilteredPoints: [PointOfInterest] // only the points selected by the filter
+    private var bls_FilterMap : [Int]                 // for each filtered point, maps to the index of the unfiltered array
+    private var bls_CategoryFilters : [String]        // category names to filter by
     
     let standard_colors = [UIColor(hex: 0x395662),
                            UIColor(hex: 0x2A9D8F),
@@ -23,7 +34,10 @@ class BLSDataSource {
     
         
     fileprivate init() {
-        bls_points = [];
+        bls_AllPoints = [];
+        bls_CategoryFilters = [];
+        bls_FilteredPoints = [];
+        bls_FilterMap = []
         bls_cats = [];
     }
     
@@ -38,7 +52,7 @@ class BLSDataSource {
         
         if FileManager.default.fileExists(atPath: self.dataFilePath()) {
             if let all_data = NSKeyedUnarchiver.unarchiveObject(withFile: self.dataFilePath()) as? [String:Any] {
-                bls_points = all_data["points"] as! [PointOfInterest]
+                bls_AllPoints = all_data["points"] as! [PointOfInterest]
                 bls_cats = all_data["categories"] as! [Category]
                 print ("Unarchived %d spots", bls_points.count)
                 
@@ -57,17 +71,99 @@ class BLSDataSource {
     func saveBlocSpotData ()  {
         
         let fp = self.dataFilePath()
-        let all_data: [String:Any] = ["points": bls_points, "categories": bls_cats]
+        let all_data: [String:Any] = ["points": bls_AllPoints, "categories": bls_cats]
         let success = NSKeyedArchiver.archiveRootObject(all_data, toFile: fp)
         
         print("saveBlocSpotData %b", success)
         
     }
 
-    func deleteAtIndex(_ i: Int) {
-        // Delete references from the categories then delete the point itself
-        bls_points.remove(at: i)
+    func pointAtIndex(_ i:Int) -> PointOfInterest {
+        
+        // if a filter is active, return a point from the filtered list, otherwise from the all points list
+        
+        if (bls_CategoryFilters.count > 0) {
+            return bls_FilteredPoints[i]
+        } else {
+            return bls_AllPoints[i]
+        }
+    }
+    
+    func setPointAtIndex(poi: PointOfInterest, index: Int) {
+        
+        if (bls_CategoryFilters.count > 0) {
+            
+            // if a category filter is active, update both arrays, translating the index
+            
+            bls_FilteredPoints[index] = poi
+            bls_AllPoints[bls_FilterMap[index]] = poi
+            
+        } else {
+            bls_AllPoints[index] = poi
+        }
+        
         self.saveBlocSpotData()
+    }
+    
+    func deleteAtIndex(_ i: Int) {
+        // If a category filter is active, delete from the unfiltered array AND the filtered array
+        
+        if (bls_CategoryFilters.count > 0) {
+            bls_AllPoints.remove(at: bls_FilterMap[i])
+            bls_FilteredPoints.remove(at: i)
+            bls_FilterMap.remove(at: i)
+        } else {
+            bls_AllPoints.remove(at: i)
+        }
+        
+        self.saveBlocSpotData()
+    }
+    
+    func appendPoint(_ p: PointOfInterest) {
+        
+    // if a filter is active, add the point to the unfiltered array and the filtered array
+    
+        if (bls_CategoryFilters.count > 0) {
+            bls_AllPoints.append(p)
+            bls_FilteredPoints.append(p)
+            bls_FilterMap.append(bls_AllPoints.count - 1)
+        } else {
+            bls_AllPoints.append(p)
+        }
+        
+        self.saveBlocSpotData()
+        
+    }
+    
+    func applyCategoryFilters(filters: [String]) {
+        
+        // create a filtered version of the points array, saving the original index
+        
+        bls_CategoryFilters  = filters  // overwrite any existing filters
+        bls_FilteredPoints = []                 // reset the filtered list
+        bls_FilterMap = []                      // reset the filter map
+
+       
+        for (index, poi) in bls_AllPoints.enumerated() {
+        
+            if let title = poi.bls_category?.title {
+            
+                if bls_CategoryFilters.contains(title) {
+                    bls_FilteredPoints.append(poi)
+                    bls_FilterMap.append(index)
+                }
+            }
+        }
+    
+    }
+    
+    func clearCategoryFilters() {
+
+    // clear the filter list and discard the duplicate array
+    
+        bls_CategoryFilters = [];
+        bls_FilteredPoints = [];
+        bls_FilterMap = [];
     }
     
     func populateWithStaticDefaults ()
@@ -127,7 +223,7 @@ class BLSDataSource {
                     poi.bls_name = searchTerm
                     poi.bls_note = default_titles[default_terms.index(of: dt)!]
                     
-                    BLSDataSource.sharedInstance.bls_points.append(poi);
+                    BLSDataSource.sharedInstance.appendPoint(poi);
                     BLSDataSource.sharedInstance.saveBlocSpotData();
                 }
             }

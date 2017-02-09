@@ -17,6 +17,8 @@ class SpotListViewController: UITableViewController, SpotListCellDelegate, CLLoc
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.tableFooterView = UIView()
+        
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
     
@@ -53,6 +55,18 @@ class SpotListViewController: UITableViewController, SpotListCellDelegate, CLLoc
         else {
             return "> 100 mi"
         }
+    }
+    
+    
+    @IBAction func filterByCategory(_ sender: AnyObject) {
+        
+        BLSDataSource.sharedInstance.applyCategoryFilters(filters: ["Restaurants"])
+        self.tableView.reloadData()
+    }
+    
+    @IBAction func unFilterByCategory(_ sender: AnyObject) {
+        BLSDataSource.sharedInstance.clearCategoryFilters()
+        self.tableView.reloadData()
     }
     // MARK - Table View Data Source Delegate
     

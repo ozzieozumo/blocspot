@@ -20,7 +20,7 @@ class SpotDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        spot = BLSDataSource.sharedInstance.bls_points[self.spotIndex]
+        spot = BLSDataSource.sharedInstance.pointAtIndex(self.spotIndex)
         self.spotName.text = spot!.bls_name
         self.spotNote.text = spot!.bls_note
     }
@@ -57,7 +57,7 @@ class SpotDetailViewController: UIViewController {
     
     @IBAction func backFromCategoryChooser(segue: UIStoryboardSegue) {
         NSLog("returning from category chooser")
-        BLSDataSource.sharedInstance.bls_points[self.spotIndex] = spot!
+        BLSDataSource.sharedInstance.setPointAtIndex(poi: spot!, index: self.spotIndex)
         BLSDataSource.sharedInstance.saveBlocSpotData()
     }
     

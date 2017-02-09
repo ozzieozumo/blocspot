@@ -188,8 +188,8 @@ extension SpotMapViewController: MKMapViewDelegate {
             let sma = (view.annotation) as! SpotMapAnnotation
             if let poi = sma.poi {
             
-                BLSDataSource.sharedInstance.bls_points.append(poi);
-                BLSDataSource.sharedInstance.saveBlocSpotData();
+                BLSDataSource.sharedInstance.appendPoint(poi)
+                BLSDataSource.sharedInstance.saveBlocSpotData()
                 
                 sma.type = BlocSpotAnnotationType.Favorite
                 (view as! MKPinAnnotationView).pinTintColor = UIColor.green
