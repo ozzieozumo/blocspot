@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="R3O-CX-teS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EJy-1k-JoW">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -7,7 +7,23 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--SpotMap-->
+        <!--Navigation Controller-->
+        <scene sceneID="Oom-xW-ETH">
+            <objects>
+                <navigationController id="EJy-1k-JoW" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bBK-CS-rGe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="R3O-CX-teS" kind="relationship" relationship="rootViewController" id="PY7-rH-MJo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sNV-er-yuN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-417" y="-27"/>
+        </scene>
+        <!--BlocSpot-->
         <scene sceneID="gsJ-8f-zke">
             <objects>
                 <viewController id="R3O-CX-teS" customClass="SpotMapViewController" customModule="Blocspot" customModuleProvider="target" sceneMemberID="viewController">
@@ -16,7 +32,7 @@
                         <viewControllerLayoutGuide type="bottom" id="XSd-FC-vR4"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ni4-QQ-vZf">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Find a new spot" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8b6-OP-MVi">
@@ -42,6 +58,7 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" title="SpotMap" id="zGm-vq-HcI"/>
+                    <navigationItem key="navigationItem" title="BlocSpot" id="iLw-HM-xon"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="mapView" destination="QWJ-sw-Qlh" id="TGW-py-UBC"/>
@@ -50,7 +67,8 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SHL-mj-D50" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="437" y="340"/>
+            <point key="canvasLocation" x="298" y="-27"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>

@@ -20,9 +20,7 @@ class SpotDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        spot = BLSDataSource.sharedInstance.pointAtIndex(self.spotIndex)
-        self.spotName.text = spot!.bls_name
-        self.spotNote.text = spot!.bls_note
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,6 +31,10 @@ class SpotDetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         
         super.viewWillAppear(animated)
+        
+        spot = BLSDataSource.sharedInstance.pointAtIndex(self.spotIndex)
+        spotName.text = spot!.bls_name ?? ""
+        spotNote.text = spot!.bls_note ?? ""
         
         // setup labels for the spot
         let title = spot?.bls_category?.title ?? "Category"

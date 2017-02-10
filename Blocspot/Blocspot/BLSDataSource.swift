@@ -89,6 +89,21 @@ class BLSDataSource {
         }
     }
     
+    func findPoint(byName name:String) -> Int? {
+        
+        // finds the index of the first point matching the given title
+        // if filtering is active, the index is relative to the filtered view
+        // if no match, then nil is returned
+        
+        for (index, poi) in bls_points.enumerated(){
+            if poi.bls_name == name {
+                return index
+            }
+        }
+        
+        return nil
+    }
+    
     func setPointAtIndex(poi: PointOfInterest, index: Int) {
         
         if (bls_CategoryFilters.count > 0) {

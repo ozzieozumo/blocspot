@@ -34,6 +34,8 @@ class SpotMapAnnotationView: MKPinAnnotationView {
             switch sma.type {
             case .Favorite:
                 self.pinTintColor = UIColor.green
+                self.leftCalloutAccessoryView = favoriteNavigateButton()
+                self.rightCalloutAccessoryView = favoriteDetailButton()
                 
             case .Candidate:
                 self.pinTintColor = UIColor.yellow
@@ -60,10 +62,10 @@ class SpotMapAnnotationView: MKPinAnnotationView {
         */
  
         let note = UILabel()
-        let labelstr: String = (poi.bls_note ?? "BLS Note")
+        let labelstr: String = (poi.bls_note ?? "")
         note.text = labelstr
-        note.layer.borderWidth = 1.0;
-        note.layer.borderColor = UIColor.orange.cgColor
+        //note.layer.borderWidth = 1.0;
+        //note.layer.borderColor = UIColor.orange.cgColor
         
         return note
     }
@@ -93,5 +95,32 @@ class SpotMapAnnotationView: MKPinAnnotationView {
         
         return btn
     }
+    
+    func favoriteNavigateButton() -> UIView {
+        
+        let btn = UIButton()
+        btn.tag = 3
+        btn.setBackgroundImage(UIImage(named: "navigate"), for: .normal)
+        //btn.setTitle("Lose It", for: .normal)
+        //btn.setTitleColor(UIColor.blue, for: .normal)
+        btn.sizeToFit()
+        
+        
+        
+        return btn
+    }
+    
+    func favoriteDetailButton() -> UIView {
+        
+        let btn = UIButton()
+        btn.tag = 4
+        btn.setBackgroundImage(UIImage(named: "details"), for: .normal)
+        //btn.setTitle("Keep It", for: .normal)
+        //btn.setTitleColor(UIColor.blue, for: .normal)
+        btn.sizeToFit()
+        
+        return btn
+    }
+
     
 }

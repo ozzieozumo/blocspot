@@ -111,7 +111,7 @@
         <!--Spot Detail View Controller-->
         <scene sceneID="eyl-Ke-wsr">
             <objects>
-                <viewController id="8LQ-1g-tmV" customClass="SpotDetailViewController" customModule="Blocspot" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SpotDetailScene" id="8LQ-1g-tmV" customClass="SpotDetailViewController" customModule="Blocspot" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="W77-CH-Mqb"/>
                         <viewControllerLayoutGuide type="bottom" id="sRq-7T-fKm"/>
@@ -343,4 +343,5 @@
     <inferredMetricsTieBreakers>
         <segue reference="qPi-J7-0Ov"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>

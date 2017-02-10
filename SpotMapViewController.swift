@@ -174,13 +174,14 @@ extension SpotMapViewController: MKMapViewDelegate {
         // Test which control was tapped and either save or delete the candidate spot
         
         if control.tag == 1  {
-            //Discard
+            //Candidate Discard
             
             mapView.removeAnnotation(view.annotation!)
             
         }
         
         if control.tag == 2 {
+            // Candidate Save as Favorite
             // Convert to a favorite POI and save it in the data source
             
             
@@ -201,6 +202,37 @@ extension SpotMapViewController: MKMapViewDelegate {
             
             
         }
+        
+        if control.tag == 3 {
+            
+            // Favorite Navigate To (go to Maps App)
+            
+        }
+        
+        if control.tag == 4 {
+            
+            // Favorite to Spot Detail View
+            // example of showing a view controller from another storyboard without using a segue
+            
+            let sma = (view.annotation) as! SpotMapAnnotation
+            let title = sma.poi?.bls_name ?? ""
+
+            if let index = BLSDataSource.sharedInstance.findPoint(byName: title) {
+                
+                
+                let storyboard = UIStoryboard(name: "SpotList", bundle: nil)
+                let controller = storyboard.instantiateViewController(withIdentifier: "SpotDetailScene")
+                let detailVC = controller as! SpotDetailViewController
+                detailVC.spotIndex = index
+                self.navigationController?.pushViewController(detailVC, animated: true)
+            }
+            
+            
+        }
+        
+        
+        
+    
         
         
     }
